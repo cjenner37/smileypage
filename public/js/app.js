@@ -10,9 +10,7 @@ const $rightPupil = $('#right-pupil')[0]
 var currentSmiley = ""
 
 $(document).ready(function () {
-		insertSmileyList()
-
-
+	insertSmileyList()
 	$('#faceWidth').change(function () {
 		$face.style.width = `${this.value}px`
 	})
@@ -45,22 +43,6 @@ $(document).ready(function () {
 	$('#jaw').change(function () {
 		$mouth.style.boxShadow = `0px ${this.value}px 0px 0px black`
 	})
-
-		// $face.style.height = `${smiley.faceHeight}px`
-		// $face.style.width = `${smiley.faceWidth}px`
-		// $leftEye.style.width = `${smiley.eyeWidth}px`
-		// $rightEye.style.width = `${smiley.eyeWidth}px`
-		// $leftEye.style.height = `${smiley.eyeHeight}px`
-		// $rightEye.style.height = `${smiley.eyeHeight}px`
-		// $leftPupil.style.height = `${smiley.pupilSize}px`
-		// $rightPupil.style.height = `${smiley.pupilSize}px`
-		// $leftPupil.style.width = `${smiley.pupilSize}px`
-		// $rightPupil.style.width = `${smiley.pupilSize}px`
-		// $mouthSpace.style.marginTop = `${smiley.mouthMarginTop}px`
-		// $mouth.style.width = `${smiley.mouthWidth}px`
-		// $mouth.style.height = `${smiley.mouthHeight}px`
-		// $mouth.style.boxShadow = `0px ${smiley.jaw}px 0px 0px black`
-
 })
 
 // CREATE and UPDATE
