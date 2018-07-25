@@ -2,13 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="smiley-space">
-        <div id="art-space">
+   <div class="navbar">
+       <div class="navbar-brand">    
+        <a href="/" class="navbar-item has-text-weight-bold"><i class="icon is-large fa-2x navbar-item fas fa-grin-beam"></i>SmileyPage</a>
+       </div>
+       <div class="navbar-menu has-text-weight-semibold navbar-end"><a class="navbar-item" href="http://www.camjenner.com" target="_blank">camjenner.com</a></div>
+   </div>
+    <div class="columns" id="smiley-space">
+        <div class="column is-half" id="art-space">
             <div id="face">
                 <div id="eye-space">
                     <div id="left-eye">
@@ -23,12 +32,14 @@
                 </div>
             </div>
         </div>
-        <div id="controls">
+        <div class="column" id="controls">
             <form id="edit-smiley-form">
-              <label for="name">Name:</label>
-              <input type="string" name="name" id="name"></br>
-              <label for="faceWidth">Face Width:</label>
-              <input type="number" name="faceWidth" id="faceWidth" value="120" step="1" min="30" max="230"></br>
+              <label class="label" for="name">Name:</label>
+              <div class="control">
+                  <input class="input" type="string" name="name" id="name" placeholder="Name"></br>
+              </div>
+              <label class="label" for="faceWidth">Face Width:</label>
+              <input class="input" type="number" name="faceWidth" id="faceWidth" value="120" step="1" min="30" max="230"></br>
               <label for="faceHeight">Face Height:</label>
               <input type="number" name="faceHeight" id="faceHeight" value="140" step="1" min="30" max="230"></br>
               <label for="eyeWidth">Eye Width:</label>

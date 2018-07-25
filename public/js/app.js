@@ -172,12 +172,10 @@ function compileSmileyLinkHTML(data) {
 	var compiled = ''
 	data.forEach(smiley => {
 		compiled += `
-			<p>
-				<button onclick="loadSmiley('${smiley.id}')"><h3>${smiley.name}</h3></button>
-			</p>
+			<button class="button is-medium" onclick="loadSmiley('${smiley.id}')"><h3>${smiley.name}</h3></button>
 		`
 	})
-	compiled = `<ul>${compiled}</ul>`
+	compiled = `<div class="field is-grouped is-grouped-multiline">${compiled}</div>`
 	return compiled
 }
 
