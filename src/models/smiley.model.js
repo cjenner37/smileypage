@@ -20,12 +20,7 @@ const SmileySchema = new mongoose.Schema({
 	deleted: { type: Boolean }
 });
 
-const numSchema = new mongoose.Schema({
-	value: Number
-})
-
-const Num = mongoose.model('Num', numSchema);
 const Smiley = mongoose.model('Smiley', SmileySchema);
 
 
-module.exports = {Smiley, Num}
+module.exports = Smiley

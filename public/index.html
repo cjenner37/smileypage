@@ -24,12 +24,17 @@
     </div>
     <div id="controls">
         <form id="edit-smiley-form">
+          <label for="name">Name:</label>
+          <input type="string" name="name" id="name"></br>
           <label for="jaw">Jaw:</label>
           <input type="number" name="jaw" id="jaw" value="4" step="1" min="-30" max="30">
           </br><input type="reset">
-          </br><button type="button" onclick="saveSmiley()">Save!</button>
+          </br><button type="button" onclick="saveSmiley()">Save</button>
+          </br><button type="button" onclick="deleteSmiley()">Delete</button>
         </form>
     </div>
+    <h3>All Smileys:</h3>
+    <div id="container"></div>
     <script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>

@@ -7,10 +7,7 @@ const config = require('./config');
 const router = require('./routes');
 
 // mongodb connection
-mongoose.connect("mongodb://test:password1@ds247698.mlab.com:47698/smileypage", {useNewUrlParser: true})
-var db = mongoose.connection
-// mongo error 
-db.on('error', console.error.bind(console, 'connection error:'))
+mongoose.connection.openUri(`mongodb://${config.db.username}:${config.db.password}@${config.db.host}/${config.db.dbName}`, { useNewUrlParser: true });
 
 // create application object 
 const app = express();
