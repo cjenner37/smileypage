@@ -1,14 +1,66 @@
 
 const $mouth = $('#mouth')[0]
+const $mouthSpace = $('#mouth-space')[0]
+const $face = $('#face')[0]
+const $eyeSpace = $('#eye-space')[0]
+const $leftEye = $('#left-eye')[0]
+const $rightEye = $('#right-eye')[0]
+const $leftPupil = $('#left-pupil')[0]
+const $rightPupil = $('#right-pupil')[0]
 var currentSmiley = ""
 
 $(document).ready(function () {
 		insertSmileyList()
 
-	$('#jaw').change(function () {
-		jawValue = this.value
-		$mouth.style.boxShadow = "0px " + jawValue + "px 0 0 black"
+
+	$('#faceWidth').change(function () {
+		$face.style.width = `${this.value}px`
 	})
+	$('#faceHeight').change(function () {
+		$face.style.height = `${this.value}px`
+	})
+	$('#eyeWidth').change(function () {
+		$leftEye.style.width = `${this.value}px`
+		$rightEye.style.width = `${this.value}px`
+	})
+	$('#eyeHeight').change(function () {
+		$leftEye.style.height = `${this.value}px`
+		$rightEye.style.height = `${this.value}px`
+	})
+	$('#pupilSize').change(function () {
+		$leftPupil.style.width = `${this.value}px`
+		$leftPupil.style.height = `${this.value}px`
+		$rightPupil.style.width = `${this.value}px`
+		$rightPupil.style.height = `${this.value}px`
+	})
+	$('#mouthMarginTop').change(function () {
+		$mouthSpace.style.marginTop = `${this.value}px`
+	})
+	$('#mouthWidth').change(function () {
+		$mouth.style.width = `${this.value}px`
+	})
+	$('#mouthHeight').change(function () {
+		$mouth.style.height = `${this.value}px`
+	})
+	$('#jaw').change(function () {
+		$mouth.style.boxShadow = `0px ${this.value}px 0px 0px black`
+	})
+
+		// $face.style.height = `${smiley.faceHeight}px`
+		// $face.style.width = `${smiley.faceWidth}px`
+		// $leftEye.style.width = `${smiley.eyeWidth}px`
+		// $rightEye.style.width = `${smiley.eyeWidth}px`
+		// $leftEye.style.height = `${smiley.eyeHeight}px`
+		// $rightEye.style.height = `${smiley.eyeHeight}px`
+		// $leftPupil.style.height = `${smiley.pupilSize}px`
+		// $rightPupil.style.height = `${smiley.pupilSize}px`
+		// $leftPupil.style.width = `${smiley.pupilSize}px`
+		// $rightPupil.style.width = `${smiley.pupilSize}px`
+		// $mouthSpace.style.marginTop = `${smiley.mouthMarginTop}px`
+		// $mouth.style.width = `${smiley.mouthWidth}px`
+		// $mouth.style.height = `${smiley.mouthHeight}px`
+		// $mouth.style.boxShadow = `0px ${smiley.jaw}px 0px 0px black`
+
 })
 
 // CREATE and UPDATE
@@ -18,6 +70,14 @@ function saveSmiley() {
 
 	const smileyData = {
 		name: $('#name').val(),
+		faceWidth: $('#faceWidth').val(),
+		faceHeight: $('#faceHeight').val(),
+		eyeWidth: $('#eyeWidth').val(),
+		eyeHeight: $('#eyeHeight').val(),
+		pupilSize: $('#pupilSize').val(),
+		mouthMarginTop: $('#mouthMarginTop').val(),
+		mouthWidth: $('#mouthWidth').val(),
+		mouthHeight: $('#mouthHeight').val(),
 		jaw: $('#jaw').val()
 	}
 	console.log(JSON.stringify(smileyData))
@@ -64,10 +124,32 @@ function loadSmiley(smileyId) {
 
 function updateSmiley(smiley) {
 
-		$mouth.style.boxShadow = "0px " + smiley.jaw + "px 0 0 black"
-		$('#jaw').val(smiley.jaw)
+		$face.style.height = `${smiley.faceHeight}px`
+		$face.style.width = `${smiley.faceWidth}px`
+		$leftEye.style.width = `${smiley.eyeWidth}px`
+		$rightEye.style.width = `${smiley.eyeWidth}px`
+		$leftEye.style.height = `${smiley.eyeHeight}px`
+		$rightEye.style.height = `${smiley.eyeHeight}px`
+		$leftPupil.style.height = `${smiley.pupilSize}px`
+		$rightPupil.style.height = `${smiley.pupilSize}px`
+		$leftPupil.style.width = `${smiley.pupilSize}px`
+		$rightPupil.style.width = `${smiley.pupilSize}px`
+		$mouthSpace.style.marginTop = `${smiley.mouthMarginTop}px`
+		$mouth.style.width = `${smiley.mouthWidth}px`
+		$mouth.style.height = `${smiley.mouthHeight}px`
+		$mouth.style.boxShadow = `0px ${smiley.jaw}px 0px 0px black`
+
 		// currentSmiley = smiley.id
-		$('#name').val(smiley.name)		
+		$('#name').val(smiley.name)
+		$('#faceHeight').val(smiley.faceHeight)
+		$('#faceWidth').val(smiley.faceWidth)
+		$('#eyeWidth').val(smiley.eyeWidth)
+		$('#eyeHeight').val(smiley.eyeHeight)
+		$('#pupilSize').val(smiley.pupilSize)
+		$('#mouthMarginTop').val(smiley.mouthMarginTop)
+		$('#mouthWidth').val(smiley.mouthWidth)
+		$('#mouthHeight').val(smiley.mouthHeight)
+		$('#jaw').val(smiley.jaw)
 
 }
 

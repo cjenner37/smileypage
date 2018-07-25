@@ -26,8 +26,25 @@
         <form id="edit-smiley-form">
           <label for="name">Name:</label>
           <input type="string" name="name" id="name"></br>
-          <label for="jaw">Jaw:</label>
+          <label for="faceWidth">Face Width:</label>
+          <input type="number" name="faceWidth" id="faceWidth" value="120" step="1" min="30" max="230"></br>
+          <label for="faceHeight">Face Height:</label>
+          <input type="number" name="faceHeight" id="faceHeight" value="140" step="1" min="30" max="230"></br>
+          <label for="eyeWidth">Eye Width:</label>
+          <input type="number" name="eyeWidth" id="eyeWidth" value="20" step="1" min="1" max="50"></br>
+          <label for="eyeHeight">Eye Height:</label>
+          <input type="number" name="eyeHeight" id="eyeHeight" value="10" step="1" min="1" max="50"></br>
+          <label for="pupilSize">Pupil Size:</label>
+          <input type="number" name="pupilSize" id="pupilSize" value="8" step="1" min="0" max="50"></br>
+          <label for="mouthMarginTop">Mouth Position:</label>
+          <input type="number" name="mouthMarginTop" id="mouthMarginTop" value="20" step="1" min="-30" max="80"></br>
+          <label for="mouthWidth">Mouth Width:</label>
+          <input type="number" name="mouthWidth" id="mouthWidth" value="60" step="1" min="0" max="100"></br>
+          <label for="mouthHeight">Mouth Curve:</label>
+          <input type="number" name="mouthHeight" id="mouthHeight" value="20" step="1" min="-50" max="50"></br>
+          <label for="jaw">Jaw Position:</label>
           <input type="number" name="jaw" id="jaw" value="4" step="1" min="-30" max="30">
+          
           </br><input type="reset">
           </br><button type="button" onclick="saveSmiley()">Save</button>
           </br><button type="button" onclick="deleteSmiley()">Delete</button>

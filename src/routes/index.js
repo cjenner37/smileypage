@@ -60,10 +60,20 @@ router.get('/smiley/:smileyId', (req, res, next) => {
 
 // UPDATE
 router.put('/smiley/:smileyId', (req, res, next) => {
-	Smiley.findByIdAndUpdate(req.params.smileyId, {
+	const smileyData = {
 		name: req.body.name,
+		faceWidth: req.body.faceWidth,
+		faceHeight: req.body.faceHeight,
+		eyeWidth: req.body.eyeWidth,
+		eyeHeight: req.body.eyeHeight,
+		eyeSize: req.body.eyeSize,
+		pupilSize: req.body.pupilSize,
+		mouthMarginTop: req.body.mouthMarginTop,
+		mouthWidth: req.body.mouthWidth,
+		mouthHeight: req.body.mouthHeight,
 		jaw: req.body.jaw
-	}, {new: true})
+	}
+	Smiley.findByIdAndUpdate(req.params.smileyId, smileyData, {new: true})
 	.then(smiley => {
 		if (!smiley) {
 			return res.status(404).send({
