@@ -8,8 +8,11 @@ const $rightEye = $('#right-eye')[0]
 const $leftPupil = $('#left-pupil')[0]
 const $rightPupil = $('#right-pupil')[0]
 var currentSmiley = ""
+const $saveButton = $('#saveButton')
+const $deleteButton = $('#deleteButton')
 
 $(document).ready(function () {
+
 	insertSmileyList()
 	$('#faceWidth').change(function () {
 		$face.style.width = `${this.value}px`
@@ -172,7 +175,7 @@ function compileSmileyLinkHTML(data) {
 	var compiled = ''
 	data.forEach(smiley => {
 		compiled += `
-			<button class="button is-medium" onclick="loadSmiley('${smiley.id}')"><h3>${smiley.name}</h3></button>
+			<button class="button is-medium" style="margin: 5px" onclick="loadSmiley('${smiley.id}')"><h3>${smiley.name}</h3></button>
 		`
 	})
 	compiled = `<div class="field is-grouped is-grouped-multiline">${compiled}</div>`

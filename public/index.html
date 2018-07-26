@@ -33,38 +33,38 @@
             </div>
         </div>
         <div class="column" id="controls">
-            <form id="edit-smiley-form">
-              <label class="label" for="name">Name:</label>
-              <div class="control">
-                  <input class="input" type="string" name="name" id="name" placeholder="Name"></br>
-              </div>
-              <label class="label" for="faceWidth">Face Width:</label>
-              <input class="input" type="number" name="faceWidth" id="faceWidth" value="120" step="1" min="30" max="230"></br>
-              <label for="faceHeight">Face Height:</label>
-              <input type="number" name="faceHeight" id="faceHeight" value="140" step="1" min="30" max="230"></br>
-              <label for="eyeWidth">Eye Width:</label>
-              <input type="number" name="eyeWidth" id="eyeWidth" value="20" step="1" min="1" max="50"></br>
-              <label for="eyeHeight">Eye Height:</label>
-              <input type="number" name="eyeHeight" id="eyeHeight" value="10" step="1" min="1" max="50"></br>
-              <label for="pupilSize">Pupil Size:</label>
-              <input type="number" name="pupilSize" id="pupilSize" value="8" step="1" min="0" max="50"></br>
-              <label for="mouthMarginTop">Mouth Position:</label>
-              <input type="number" name="mouthMarginTop" id="mouthMarginTop" value="20" step="1" min="-30" max="80"></br>
-              <label for="mouthWidth">Mouth Width:</label>
-              <input type="number" name="mouthWidth" id="mouthWidth" value="60" step="1" min="0" max="100"></br>
-              <label for="mouthHeight">Mouth Curve:</label>
-              <input type="number" name="mouthHeight" id="mouthHeight" value="20" step="1" min="-50" max="50"></br>
-              <label for="jaw">Jaw Position:</label>
-              <input type="number" name="jaw" id="jaw" value="4" step="1" min="-30" max="30">
+            <form id="edit-smiley-form" style="padding-left: 10px">
+              <label class="label is-small" style="margin-top: 20px" for="name">Name:</label>
+              <input class="input is-small" type="string" name="name" id="name" placeholder="Name"></br>
+              <label class="label is-small" for="faceWidth">Face Width:</label>
+              <input class="input is-small" type="number" name="faceWidth" id="faceWidth" value="120" step="1" min="30" max="230"></br>
+              <label class="label is-small" for="faceHeight">Face Height:</label>
+              <input class="input is-small" type="number" name="faceHeight" id="faceHeight" value="140" step="1" min="30" max="230"></br>
+              <label class="label is-small" for="eyeWidth">Eye Width:</label>
+              <input class="input is-small" type="number" name="eyeWidth" id="eyeWidth" value="20" step="1" min="1" max="50"></br>
+              <label class="label is-small" for="eyeHeight">Eye Height:</label>
+              <input class="input is-small" type="number" name="eyeHeight" id="eyeHeight" value="10" step="1" min="1" max="50"></br>
+              <label class="label is-small" for="pupilSize">Pupil Size:</label>
+              <input class="input is-small" type="number" name="pupilSize" id="pupilSize" value="8" step="1" min="0" max="50"></br>
+              <label class="label is-small" for="mouthMarginTop">Mouth Position:</label>
+              <input class="input is-small" type="number" name="mouthMarginTop" id="mouthMarginTop" value="20" step="1" min="-30" max="80"></br>
+              <label class="label is-small" for="mouthWidth">Mouth Width:</label>
+              <input class="input is-small" type="number" name="mouthWidth" id="mouthWidth" value="60" step="1" min="0" max="100"></br>
+              <label class="label is-small" for="mouthHeight">Mouth Curve:</label>
+              <input class="input is-small" type="number" name="mouthHeight" id="mouthHeight" value="20" step="1" min="-50" max="50"></br>
+              <label class="label is-small" for="jaw">Jaw Position:</label>
+              <input class="input is-small" style="margin-bottom: 10px" type="number" name="jaw" id="jaw" value="4" step="1" min="-30" max="30">
               
-              </br><button type="button" onclick="location.reload()">New</button>
-              </br><button type="button" onclick="saveSmiley()">Save</button>
-              </br><button type="button" onclick="deleteSmiley()">Delete</button>
+              </br><button class="button is-outlined is-warning" type="button" onclick="location.reload()">New</button>
+              <button id="saveButton" class="button is-outlined is-primary" type="button" onclick="saveSmiley()">Save</button>
+              <button id="deleteButton" class="button is-outlined is-danger" type="button" onclick="deleteSmiley()">Delete</button>
             </form>
         </div>
     </div>
-    <h3>All Smileys:</h3>
-    <div id="container"></div>
+    <div class="container is-fluid" style="max-width: 400">
+        <h2 class="has-text-weight-semibold">All Smileys:</h2>
+    </div>
+    <div id="container" class="container" style="max-width: 600px"></div>
     <script type="text/javascript" src="/js/app.js"></script>
 </body>
 </html>
