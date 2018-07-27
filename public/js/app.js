@@ -17,6 +17,7 @@ $(document).ready(function () {
 	$('#faceWidth').change(function () {
 		$face.style.width = `${this.value}px`
 	})
+
 	$('#faceHeight').change(function () {
 		$face.style.height = `${this.value}px`
 	})
@@ -53,6 +54,11 @@ function saveSmiley() {
 	var route = ""
 	var httpMethod = ""
 
+	if ($('#name').val() ===  "") {
+		alert("Your smiley needs a name!")
+		return 
+	}
+
 	const smileyData = {
 		name: $('#name').val(),
 		faceWidth: $('#faceWidth').val(),
@@ -66,7 +72,7 @@ function saveSmiley() {
 		jaw: $('#jaw').val()
 	}
 	console.log(JSON.stringify(smileyData))
-	// $.post("/api/new", JSON.stringify(smileyData), null, "json")
+
 	if (currentSmiley === "") {
 		route = "/api/smiley"
 		httpMethod = "POST"
@@ -82,7 +88,6 @@ function saveSmiley() {
 			'Content-Type': 'application/json'
 		}
 	})
-		// .then(response => response.json())
 		.then(smiley => {
 			console.log("We Saved One!", smiley)
 			updateSmiley(smiley)
@@ -92,8 +97,6 @@ function saveSmiley() {
 		.catch(err => {
 			console.error('Something went wrong:', err)
 		})
-	// insertSmileyList()
-	// updateSmiley(currentSmiley)
 }
 
 function loadSmiley(smileyId) {
