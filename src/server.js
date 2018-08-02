@@ -18,7 +18,8 @@ app.use(bodyParser.json());
 app.use(express.static(publicPath));
 app.use('/api', router);
 
+const PORT = process.eng.PORT
 
-app.listen(process.env.PORT || 3000, function () {
+app.listen(PORT || 3000, function () {
 	console.log(`${config.appName} is listening on port ${config.port}`);
 }) 
