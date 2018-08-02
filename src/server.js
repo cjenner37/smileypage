@@ -19,6 +19,6 @@ app.use(express.static(publicPath));
 app.use('/api', router);
 
 
-app.listen(config.port, function () {
+app.listen(process.env.PORT || 3030, function () {
 	console.log(`${config.appName} is listening on port ${config.port}`);
 }) 
