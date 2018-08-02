@@ -2,7 +2,7 @@ require('dotenv').config();
 
 module.exports = {
 	appName: 'SmileyPage',
-	port: 3030,
+	port: PORT,
 	db: {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
